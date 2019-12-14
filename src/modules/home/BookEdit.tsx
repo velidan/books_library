@@ -20,8 +20,16 @@ export default function EditBook(props: Props) {
   const { book: propsBook, open, onClose } = props;
   const mode = propsBook ? EditMode.edit : EditMode.create;
 
-  const [book, setBook] = React.useState(propsBook || new Book());
-  console.log("Book", book);
+  console.log("propsBook => ", propsBook);
+  const resBook = propsBook || new Book();
+  console.log("resBook => ", resBook, Object.is(propsBook, new Book()));
+
+  const [book, setBook] = React.useState(resBook);
+  console.log("Book", book, Object.is(book, resBook));
+
+  React.useEffect(() => {
+    setBook(resBook);
+  }, [mode]);
 
   const generateOnChange = (fieldName: string) => (
     e: React.ChangeEvent<HTMLInputElement>
