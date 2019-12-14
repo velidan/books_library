@@ -1,0 +1,32 @@
+@import "normalize";
+@import "theme";
+@import "typography";
+
+body 
+  margin: 0
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
+
+#root
+  @extend .flc
+  min-height: 100vh
+
+
+.nav-link
+  color: $primaryTextColor
+
+.main-wrapper 
+  @extend .flc-center-all
+  width: 100%
+  flex-grow: 1
+  background: $additionalColor_0
+  background: linear-gradient(45deg, #4158d0, #c850c0)
+  padding: 33px 30px
+
+.st-container
+  height: 100%
+  padding: 16px
+  border-radius: 8px
+  border: 1px solid $secondaryColor
+  box-shadow: 9px 10px 9px -10px rgba(0,0,0,0.75);
+  
+
