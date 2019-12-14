@@ -39,7 +39,6 @@ export const createStore = () => {
     },
 
     updateBookById(id: number) {},
-
     deleteBookById(id: number) {}
   };
 

@@ -1,3 +1,10 @@
+const EmptyBook = {
+  id: 0,
+  title: "",
+  author: "",
+  date: ""
+};
+
 export default class Book implements I_Book {
   id: number;
   author: string;
@@ -6,7 +13,7 @@ export default class Book implements I_Book {
   // title will be tranformed in the real time
   private _title: string;
 
-  constructor(data: BookTypeClient) {
+  constructor(data: BookTypeClient = EmptyBook) {
     const { id, title, author, date } = data;
 
     this.id = id;
