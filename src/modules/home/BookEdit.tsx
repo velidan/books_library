@@ -1,9 +1,10 @@
 import * as React from "react";
 
-import TextField from "@material-ui/core/TextField";
-
-import { Dialog, Button } from "shared/components";
+import { Dialog, Button, TextInput } from "shared/components";
+import { validatorService } from "shared/services";
 import { Book } from "models";
+
+const { createRequiredValidate, dateValidate } = validatorService;
 
 type Props = {
   book: I_Book | undefined;
@@ -20,24 +21,21 @@ export default function EditBook(props: Props) {
   const { book: propsBook, open, onClose } = props;
   const mode = propsBook ? EditMode.edit : EditMode.create;
 
-  console.log("propsBook => ", propsBook);
   const resBook = propsBook || new Book();
-  console.log("resBook => ", resBook, Object.is(propsBook, new Book()));
-
   const [book, setBook] = React.useState(resBook);
-  console.log("Book", book, Object.is(book, resBook));
 
   React.useEffect(() => {
     setBook(resBook);
   }, [mode]);
 
-  const generateOnChange = (fieldName: string) => (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const generateOnChange = (fieldName: string) => (val: string) => {
+    console.log("book", book);
     const res = {
       ...book,
-      [fieldName]: e.target.value
+      title: book.title, // avoid a getter issue in use State
+      [fieldName]: val
     };
+    console.log("res =>", res);
 
     setBook(res);
   };
@@ -52,7 +50,7 @@ export default function EditBook(props: Props) {
 
   return (
     <Dialog open={open} onClose={onClose} actions={actions}>
-      <TextField
+      <TextInput
         autoFocus
         margin="dense"
         id="author"
@@ -61,8 +59,9 @@ export default function EditBook(props: Props) {
         value={book.author}
         onChange={generateOnChange("author")}
         fullWidth
+        validators={[createRequiredValidate()]}
       />
-      <TextField
+      <TextInput
         autoFocus
         margin="dense"
         id="title"
@@ -71,8 +70,9 @@ export default function EditBook(props: Props) {
         value={book.title}
         onChange={generateOnChange("title")}
         fullWidth
+        validators={[createRequiredValidate()]}
       />
-      <TextField
+      <TextInput
         autoFocus
         margin="dense"
         id="date"
@@ -81,6 +81,7 @@ export default function EditBook(props: Props) {
         value={book.date}
         onChange={generateOnChange("date")}
         fullWidth
+        validators={[createRequiredValidate(), dateValidate]}
       />
     </Dialog>
   );

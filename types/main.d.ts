@@ -21,3 +21,14 @@ type BookTypeClient = BookBase & {
 interface I_Book extends BookTypeClient {
 	date: string
 };
+
+type Validator = (val: string, ...args?: any) => string | null;
+
+type ValidatorService = {
+	createRequiredValidate: (msg?: string) => (val: string) => msg | null;
+	dateValidate: (val: string, re: string) => string | null;
+}
+
+type DateService = {
+	
+}
