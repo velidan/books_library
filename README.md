@@ -40,6 +40,7 @@ This app based on create-react-app
 - error logging
 - http client with interceptors for auth tokens, error handling etc.
 - repository & storage pattern
+- loaders, animations etc.
 - error registry
 - an own form module or better 3rd lib integration
 - unit & integration tests
