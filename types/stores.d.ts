@@ -1,10 +1,13 @@
-
 interface I_BooksStore {
 	books: I_Book[];
 
-	fetchBooks: () => void;
-	updateBookById: (id: number) => void;
-	deleteBookById: (id: number) => void;
+	fetchBooks: () => Promise<I_Book[]>;
+	create: (book: I_Book) => Promise<void>;
+	updateBookById: (id: number, book: I_Book) => Promise<void>;
+	delete: (book: I_Book) => Promise<void>;
+
+	// TODO: check the non-found use case
+	findBookById: (id: number) => I_Book | undefined; 
 }
 
 
@@ -22,6 +25,10 @@ interface I_BaseToastConf {
 interface I_ToastDefaultConfig {
 	/* after this time (if presented) a toast will be hided */
 	autoHideDuration?: number;
+	anchorOrigin: {
+		vertical: "top" | "bottom",
+		horizontal: "center" | "left" | "right"
+	}
 }
 
 interface I_ToastConf extends I_BaseToastConf, I_ToastDefaultConfig {

@@ -25,7 +25,16 @@ const data = [
   }
 ];
 
+/**
+ * Should be a Http service with the Response/Request interceptors
+ * adding some CSRF token to every request
+ * global error handling & toash show (eg 500)
+ * auth error handling and redirect to Login is the auth token expired etc.
+ */
 export default {
-  get: (url: string) => Promise.resolve(data),
+  get: (url: string) => {
+    console.info(`a real get request should be done to ${url}`);
+    return Promise.resolve(data);
+  },
   post: () => alert("post")
 };

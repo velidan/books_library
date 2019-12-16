@@ -1,3 +1,7 @@
+import { http } from "../../http";
+import urls from "./urls";
+
+// real server request simulation
 export const getBooks = () => {
-  return 1;
+  return http.get(urls.getBooksUrl);
 };

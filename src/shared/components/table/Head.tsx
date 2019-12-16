@@ -12,9 +12,15 @@ export default function Head({ data, onAdd }: Props) {
   return (
     <tr className="table-head">
       {data.map(o => {
-        return <th className="table-head-row">{o.label}</th>;
+        return (
+          <th key={o.field} className="table-head-row">
+            {o.label}
+          </th>
+        );
       })}
-      <th>{<RoundButton icon={<AddIcon />} onClick={onAdd} />}</th>
+      <th>
+        {<RoundButton className="add" icon={<AddIcon />} onClick={onAdd} />}
+      </th>
     </tr>
   );
 }

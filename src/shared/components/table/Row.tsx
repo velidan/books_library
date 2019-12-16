@@ -16,12 +16,26 @@ export default function Row<T>(props: Props<T>) {
 
   return (
     <tr>
-      {columnsData.map(o => (
-        <td>{(rowData as any)[o.field]}</td>
-      ))}
+      {columnsData.map(o => {
+        const val = (rowData as any)[o.field];
+        // a class to have a possibility to use CSS for a dedicated cell. Eg capitalize title
+        return (
+          <td key={val} className={o.field}>
+            {val}
+          </td>
+        );
+      })}
       <td>
-        <RoundButton icon={<EditIcon />} onClick={() => onEdit(rowData)} />
-        <RoundButton icon={<DeleteIcon />} onClick={() => onDelete(rowData)} />
+        <RoundButton
+          className="edit"
+          icon={<EditIcon />}
+          onClick={() => onEdit(rowData)}
+        />
+        <RoundButton
+          className="delete"
+          icon={<DeleteIcon />}
+          onClick={() => onDelete(rowData)}
+        />
       </td>
     </tr>
   );

@@ -1,2 +1,2 @@
 export * from "./validatorService";
-export * from "./dateService";
+export { default as dateService } from "./dateService";

@@ -5,7 +5,11 @@ export const createStore: CreateStore = () => {
     open: false,
 
     defaultConfig: {
-      autoHideDuration: 5000 // ms
+      autoHideDuration: 5000, // ms
+      anchorOrigin: {
+        vertical: "top",
+        horizontal: "center"
+      }
     },
 
     config: {

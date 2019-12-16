@@ -1,3 +1,3 @@
 export default {
-  getBooksUrl: "http//getBook"
+  getBooksUrl: "http//host/getBook"
 };

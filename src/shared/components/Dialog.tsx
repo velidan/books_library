@@ -1,7 +1,4 @@
 import * as React from "react";
-
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
 import MaterialDialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
@@ -13,10 +10,12 @@ type Props = {
   actions: React.ReactNode;
   open: boolean;
   onClose: () => void;
+  title: string;
+  description: string;
 };
 
 export default function Dialog(props: Props) {
-  const { children, actions, open, onClose } = props;
+  const { children, actions, open, onClose, title, description } = props;
 
   return (
     <MaterialDialog
@@ -24,11 +23,10 @@ export default function Dialog(props: Props) {
       onClose={onClose}
       aria-labelledby="form-dialog-title"
     >
-      <DialogTitle id="form-dialog-title">Edit book</DialogTitle>
+      <DialogTitle id="form-dialog-title">{title}</DialogTitle>
+
       <DialogContent>
-        <DialogContentText>
-          To edit book, please, use the form below.
-        </DialogContentText>
+        <DialogContentText>{description}</DialogContentText>
         {children}
       </DialogContent>
       <DialogActions>{actions}</DialogActions>
