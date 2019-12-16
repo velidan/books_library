@@ -1,5 +1,6 @@
 import * as React from "react";
 import Snackbar from "@material-ui/core/Snackbar";
+import cn from "classnames";
 
 type Props = {
   open: boolean;
@@ -21,7 +22,12 @@ export default function Toast(props: Props) {
 
   return (
     <div>
-      <Snackbar open={open} onClose={onClose} {...config} />
+      <Snackbar
+        className={cn("st-toast", config.type)}
+        open={open}
+        onClose={onClose}
+        {...config}
+      />
     </div>
   );
 }

@@ -1,0 +1,15 @@
+body // to override material UI 
+	.round-btn
+		width: 40px
+		height: 40px
+
+		&.add
+			background-color: $successColor
+			color: $primaryTextColor
+
+			&:hover
+				background-color: lighten($successColor, 20)
+
+		&.edit
+			path
+				fill: $infoColor

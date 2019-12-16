@@ -1,11 +1,11 @@
 // use the separated import as we need only one Model
 import Book from "models/Book";
+import { dateService } from "shared/services";
 
 function mapToClient(data: BookTypeServer[]): I_Book[] {
   return data.map(
     (book: BookTypeServer): I_Book => {
-      // TODO: some date service
-      const res = { ...book, date: new Date(book.date).toString() };
+      const res = { ...book, date: dateService.formatISO(book.date) };
       return new Book(res);
     }
   );

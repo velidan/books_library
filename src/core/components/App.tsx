@@ -1,7 +1,7 @@
 import React from "react";
 import { Observer } from "mobx-react";
 
-import Home from "modules/home";
+import BooksLibrary from "modules/books-library";
 import { storeContext, StoresEnum } from "stores";
 import { Toast } from "shared";
 
@@ -13,7 +13,7 @@ export default function App() {
 
   return (
     <React.Fragment>
-      <Home />
+      <BooksLibrary />
       <Observer>
         {() => (
           <Toast

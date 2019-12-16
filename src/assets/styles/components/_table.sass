@@ -1,0 +1,52 @@
+// in the real case we should aboid to use tag selectors
+table 
+  border-collapse: collapse
+  min-width: 760px
+  background: $primaryTextColor
+  border-radius: 10px
+  overflow: hidden
+  width: 100%
+  margin: 0 auto
+  position: relative
+  box-shadow: $primary-box-shadow
+
+  * 
+    position: relative
+
+  td, th 
+    padding: 15px
+
+    &:last-child
+      display: flex
+
+      .round-btn:last-child
+        margin-left: auto
+
+
+  thead 
+    th 
+      @extend .paragraph-1
+      color: $primaryTextColor
+    tr 
+      height: 60px
+      background: $primaryColorDark
+
+  tbody
+     tr 
+      height: 50px
+      color: $secondaryTextColor
+        
+      &:last-child 
+        border: 0
+
+      &:nth-child(even) 
+        background-color: $additionalColor_1
+
+
+  td, th 
+    text-align: left
+
+
+
+      
+
