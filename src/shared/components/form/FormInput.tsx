@@ -10,13 +10,14 @@ type Props = {
   [index: string]: any; // any material field props
 };
 
-// Would be nice to add debounce to onChange to boos performance
-
+/* This component is a Bridge | Adapter abstraction layer
+ * between Input implementation and Forms
+ */
 export default function FormInput(props: Props) {
   const { value, id, error, label, onChange, ...others } = props;
 
   const finalLabel = (error as string) || label;
-
+  // Would be nice to add debounce to onChange to boos performance
   return (
     <TextInput
       {...others}

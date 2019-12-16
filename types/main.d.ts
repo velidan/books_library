@@ -22,15 +22,9 @@ interface I_Book extends BookTypeClient {
 	date: string
 };
 
-// type Validator = (val: string, ...args?: any) => string | null;
-
 type ValidatorService = {
 	createRequiredValidate: (msg?: string) => (val: string) => boolean | msg;
 	dateValidate: (val: string) => boolean | string;
-}
-
-type DateService = {
-	
 }
 
 type FormFieldError = {
@@ -39,7 +33,6 @@ type FormFieldError = {
 	type: string
 	message: string;
 }
-
 
 interface I_DateService {
 	/** DD.MM.YYYY */

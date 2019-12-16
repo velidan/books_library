@@ -1,3 +1,6 @@
 export default {
-  getBooksUrl: "http//host/getBook"
+  host: "https://host",
+  get booksUrl() {
+    return `${this.host}/books`;
+  }
 };

@@ -3,7 +3,7 @@ import { toPascalCase, cleanStr } from "shared/utils";
 
 function getEmptyBook() {
   return {
-    // shouldn't be there in the real case as the server should create it.
+    // id shouldn't be there in the real case as the server should create it.
     id: Date.now(),
     title: "",
     author: "",

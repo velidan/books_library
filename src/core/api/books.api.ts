@@ -3,5 +3,5 @@ import urls from "./urls";
 
 // real server request simulation
 export const getBooks = () => {
-  return http.get(urls.getBooksUrl);
+  return http.get(urls.booksUrl);
 };

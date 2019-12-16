@@ -35,10 +35,11 @@ export default function EditBook(props: Props) {
    * more complicated configurations and more time. I don't have it unfortunatelly.
 
    Btw. I don't like the 3rd forms because their integration 
-   could take a lot time and be tricky (like this one)
+   could take a lot time and be tricky (like this one).
    In my projects I prefer to use own solution.
 
    In this case 3rd form had been used for validation functionality only to save time.
+   hovewer I don't like this solution
    */
   const { register, setValue, handleSubmit, errors } = useForm();
 
@@ -52,7 +53,7 @@ export default function EditBook(props: Props) {
   ) => {
     // as it model need to save getters/setters.
     // To increase performance would be nice to use debounce
-    // + It's possible to avoid this React-way and work with model till the save
+    // also it's possible to avoid this React-way and work with model till the save
     const res = shallowClone(book, { [fieldName]: val });
 
     setValue(fieldName, val, true);

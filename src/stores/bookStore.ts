@@ -64,7 +64,6 @@ export const createStore = () => {
       // reject if the title already exists
       if (this.isTitleExists(title)) {
         // it should be some errors enum etc. Shouldn't be hardcoded in real case
-        // tslint:disable-next-line
         throw new Error("This title already exists!");
       }
     },

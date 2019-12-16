@@ -111,20 +111,21 @@ function Home() {
   return (
     <main className="main-wrapper books-library">
       <h1 className="primary-title">Book Library</h1>
-
-      <Table<I_Book>
-        className="book-table"
-        data={tableData}
-        actions={{
-          onRowAdd: () => {
-            setbookEditState({ open: true });
-          },
-          onRowEdit: (book: I_Book) => {
-            setbookEditState({ open: true, book });
-          },
-          onRowDelete: deleteBook
-        }}
-      />
+      <div className="container">
+        <Table<I_Book>
+          className="book-table"
+          data={tableData}
+          actions={{
+            onRowAdd: () => {
+              setbookEditState({ open: true });
+            },
+            onRowEdit: (book: I_Book) => {
+              setbookEditState({ open: true, book });
+            },
+            onRowDelete: deleteBook
+          }}
+        />
+      </div>
 
       {/* as we use the same component for Edit/Create. 
     Need to re-create it on each mode to fill the correct Model. 

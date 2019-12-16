@@ -1,4 +1,4 @@
-@import "normalize";
+
 @import "theme";
 @import "typography";
 
@@ -18,14 +18,9 @@ body
   @extend .flc-center-all
   flex-grow: 1
   background: $additionalColor_0
-  background: linear-gradient(45deg, #4158d0, #c850c0)
+  background: $primaryGradient
   padding: 33px 30px
 
-.st-container
-  height: 100%
-  padding: 16px
-  border-radius: 8px
-  border: 1px solid $secondaryColor
-  box-shadow: 9px 10px 9px -10px rgba(0,0,0,0.75);
-  
+.container
+  max-width: 1200px
 
