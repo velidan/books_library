@@ -26,3 +26,22 @@ Bonus Task
 # Result
 I implemened all functioncal requirements even with the bonus task. 
 *I didn't create a real webserver with the app because I didn't have time for it and I think it isn't importan. I implemented the minimal flow with the demonstaration http service, api gateway and described about interceptors and error handling*
+
+![Books library demo](https://media.giphy.com/media/cnEtX54EJzdLd1BVUu/giphy.gif)
+
+# How to run
+- clone repo
+- go to the root folder and run `yarn && yarn start` or `npm install && npm start`
+The server should run at http://localhost:3000/
+
+This app based on create-react-app
+
+# What should be added in the real-life
+- error logging
+- http client with interceptors for auth tokens, error handling etc.
+- repository & storage pattern
+- error registry
+- an own form module or better 3rd lib integration
+- unit & integration tests
+- CI
+- docker & cubernetes
