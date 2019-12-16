@@ -49,11 +49,11 @@ function Home() {
   };
 
   // could be created some shorthand notification service to simplify config
-  const handleCRUDError = () => {
+  const handleCRUDError = (err: Error) => {
     toastStore
       .setRenderConf({
         type: "error",
-        message: "Something went wrong"
+        message: err.message || "Something went wrong"
       })
       .show();
   };
@@ -69,9 +69,9 @@ function Home() {
             message: "Updated successfully"
           })
           .show();
+        closeEditBook();
       })
-      .catch(handleCRUDError)
-      .finally(closeEditBook);
+      .catch(handleCRUDError);
   };
 
   const createBook = (book: I_Book) => {
@@ -84,9 +84,9 @@ function Home() {
             message: "Created successfully"
           })
           .show();
+        closeEditBook();
       })
-      .catch(handleCRUDError)
-      .finally(closeEditBook);
+      .catch(handleCRUDError);
   };
 
   const deleteBook = (book: I_Book) => {

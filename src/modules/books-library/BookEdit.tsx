@@ -76,9 +76,6 @@ export default function EditBook(props: Props) {
       Save
     </Button>
   ];
-
-  console.log("errors => ", errors);
-
   const dialogTitle = mode === EditMode.edit ? "Edit Book" : "Create Book";
 
   return (

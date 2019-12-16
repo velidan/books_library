@@ -6,8 +6,10 @@ interface I_BooksStore {
 	updateBookById: (id: number, book: I_Book) => Promise<void>;
 	delete: (book: I_Book) => Promise<void>;
 
-	// TODO: check the non-found use case
 	findBookById: (id: number) => I_Book | undefined; 
+	checkIsTitleUnique: (title: string) => void;
+
+	private isTitleExists: (title: string) => boolean;
 }
 
 
